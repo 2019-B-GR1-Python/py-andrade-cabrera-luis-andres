@@ -1,2 +1,0 @@
-Andres Andrade
-Luis Cabrera
