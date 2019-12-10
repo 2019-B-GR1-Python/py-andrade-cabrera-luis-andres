@@ -36,6 +36,9 @@ df.to_excel(writer, sheet_name = 'Tercera', columns = columnas)
 writer.save() # Si no se utiliza el excel permanece solo en memoria
 
 #num_artistas = df['artist'].value_counts()
+path_save_full_bin = "/home/andres/Dropbox/6to&7moSemestre/IDW/py-andrade-cabrera-luis-andres/03-Pandas/data/artwork_data_full.pickle"
+df5 = pd.read_pickle(path_save_full_bin)
+df = df5.iloc[49980:50519,:].copy()
 num_artistas = df
 path_colores = 'data/mi_df_colores.xlsx'
 
@@ -55,26 +58,21 @@ formato_artistas = {
 
 hoja_artistas.conditional_format(rango_celdas, formato_artistas)
 
+#writer_colores.save()
+
+chart = writer_colores.book.add_chart(
+        {
+                'type' : 'column'
+                })
+
+chart.add_series({
+        'values' : '=Artistas!$B$2:$B$85',
+        'gap' : 2})
+
+chart.set_y_axis({'major_gridlines' : {'visible':False}})
+
+chart.set_legend({'position':'none'})
+
+hoja_artistas.insert_chart('D2', chart)
+
 writer_colores.save()
-
-
-### GRAFICAS ####
-#workbook = xlsxwriter.Workbook(path_colores)
-df.to_excel(writer_colores, sheet_name = 'Graficos', columns = columnas)
-workbook = writer_colores.book
-worksheet = workbook
-chart = workbook.add_chart({'type': 'line'})
-# Add a series to the chart.
-chart.add_series({'values': '=Sheet2!$D$2:$D$200',
-    'marker': {
-        'type': 'square',
-        'size': 8,
-        'border': {'color': 'black'},
-        'fill':   {'color': 'red'},
-    },
-})
-
-# Insert the chart into the worksheet.
-hoja_artistas.insert_chart('C2', chart)
-
-workbook.close()
