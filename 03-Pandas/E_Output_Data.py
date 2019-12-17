@@ -13,6 +13,7 @@ import sqlite3
 path_save_full_bin = "/home/andres/Dropbox/6to&7moSemestre/IDW/py-andrade-cabrera-luis-andres/03-Pandas/data/artwork_data_full.pickle"
 df5 = pd.read_pickle(path_save_full_bin)
 df = df5.iloc[49980:50519,:].copy()
+df = df5.iloc[49980:49999,:].copy()
 # tipos de archivos
 # json
 # excel
@@ -76,3 +77,11 @@ chart.set_legend({'position':'none'})
 hoja_artistas.insert_chart('D2', chart)
 
 writer_colores.save()
+
+## Clase dbeaver
+with sqlite3.connect("bdd_artistas.db") as conexion:
+    df5.to_sql('py_artistas',conexion)
+    
+df.to_json('artistas.json')
+df.to_json('artistas_tabla.json', orient='table')
+
