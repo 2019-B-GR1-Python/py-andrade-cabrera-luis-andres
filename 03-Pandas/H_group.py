@@ -71,3 +71,4 @@ def transformar_df_frecuencia(df):
     df_completo_con_valores = pd.concat(lista_df)
     return df_completo_con_valores
 df_valores_llenos = transformar_df_frecuencia(seccion_df)
+a = df_valores_llenos['width']
