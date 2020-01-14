@@ -57,3 +57,36 @@ Permite interactuar con la respuesta del Scrapy
 ```
     response.css('.tags>.tag::text').extract()
 ```
+```
+    response.css('.row > div > div:nth-child(2) > .text::text').extract()
+```
+### scrapy shell `xpath`
+```
+    response.xpath('/html/head/title').extract()
+```
+```
+    response.xpath('//title').extract()
+```
+```
+    response.xpath('/html/body/div/div[2]/div[2]/h2').extract()
+```
+```
+    response.xpath('/html/body/div/div[2]/div[2]/h2/text()').extract()
+```
+```
+    response.xpath("//div[@class='quote']").extract_first()
+```
+```
+    response.xpath("//div[@class='quote']/span[@class='text']").extract_first()
+```
+```
+    response.xpath("//div[@class='quote']/span[@class='text']/text()").extract_first()
+```
+```
+    response.xpath("//div[@class='quote']/span/a/@href").extract_first()
+```
+
+## Scrapy startproject `nombre_proyecto`
+```
+    scrapy startproject arania_basica
+```

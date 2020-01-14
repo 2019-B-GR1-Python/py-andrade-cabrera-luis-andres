@@ -16,3 +16,7 @@ proyectos/1er_bimestre/.ipynb_checkpoints/
 proyectos/1er_bimestre/datos/reportes-homicidio.csv
 
 proyectos/1er_bimestre/datos/reportes-homicidio.csv.tar.gz
+
+04-scrapy/03-arania-basica/arania_basica/arania_basica/__pycache__/
+
+*.pyc
