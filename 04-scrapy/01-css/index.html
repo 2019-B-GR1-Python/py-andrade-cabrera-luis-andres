@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /*  ID
+            # + nombreId
+        */ 
+        #titulo-uno{
+            background-color: red;
+        }
+
+        /* NOMBRe-ETIQUETA
+           nombre-etiqueta
+        */
+        p{
+            color:white;
+            background-color: black;
+        }
+        body{
+            background-color: orange;
+        }
+        /*  Clases
+            . + nombre-clase
+        */
+        .texto-azul{
+            color:blue;
+        }
+        .texto-amarillo{
+            color:yellow;
+        }
+        .fondo-verde{
+            background-color: green;
+        }
+        /* JERARQUIA
+            EL Mas importante es el Style
+            Style > ID  > Class > etiqueta
+        */
+        .texto-cafe{
+            color:brown;
+        }
+        /*Etiqueta dentro de otra*/
+        body > ul > li > p {
+            background-color: coral;
+            color:darkgray;
+        }
+
+        li > p.texto-amarillo{
+            color:gold;
+        }
+
+        p.texto-azul.texto-amarillo.texto-cafe.texto-blanco{
+            color:pink;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 class="texto-amarillo">Titulo</h1>
+    <p  id="titulo-uno"
+        class="fondo-verde" 
+        style="background-color: indigo;"
+        >Mi mama</p>
+    <p class="texto-blanco texto-cafe texto-azul texto-amarillo">me mima</p>
+    <ul>
+        <li>
+            <p>Muy</p>
+        </li>
+        <li>
+            <p>Buenos</p>
+        </li>
+        <li>
+            <p class="texto-amarillo">Dias</p>
+        </li>
+    </ul>
+    <style>
+        .texto-blanco{
+            color:white;
+        }
+    </style>
+</body>
+</html>
