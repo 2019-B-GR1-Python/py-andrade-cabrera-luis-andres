@@ -9,7 +9,7 @@ Created on Tue Nov 26 07:42:22 2019
 import numpy as np
 import pandas as pd
 
-arr_pand = np.random.randint(0,10,6).reshape(2,3)
+arr_pand = np.random.randint(0,90,24).reshape(6,4)
 
 dataframe_one = pd.DataFrame(arr_pand)
 # Un dataframe es un conjunto de series

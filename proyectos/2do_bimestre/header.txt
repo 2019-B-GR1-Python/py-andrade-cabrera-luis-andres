@@ -1,0 +1,2 @@
+"titulo";"link";"vistas";"authors";"ultimaActualizacion";"last_chapter"
+titulo;link;vistas;authors;ultimaActualizacion;last_chapter
